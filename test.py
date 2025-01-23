@@ -9,4 +9,3 @@ while len(ciphertext) < len(word):
 	ciphertext += alph[(alph.index(word[j]) + letter) % 26]
 	j+=1
 print(ciphertext)
-

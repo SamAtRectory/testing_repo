@@ -1,11 +1,9 @@
-alph = "abcdefghijklmnopqrstuvwxyz"
-word = input("Give me a message. ")
-key = input("Give me a key. ")
-ciphertext = ""
+alph = "abcdefghijklmnopqrstuvwxyz"	# Accessbile alphabet
+word = input("Give me a message. ")	# The plaintext
+key = input("Give me a key. ")	# The key
+ciphertext = ""	# Empty space for the encoded message
 j = 0
-while len(ciphertext) < len(word):
-	i = j % len(key)
-	letter = alph.index(key[i])
-	ciphertext += alph[(alph.index(word[j]) + letter) % 26]
+while len(ciphertext) < len(word):	# Loops the key until it matches the length of the plaintext
+	ciphertext += alph[(alph.index(word[j]) + alph.index(key[j % len(key)])) % 26]	# Creates the final message
 	j+=1
 print(ciphertext)
